@@ -33,7 +33,7 @@ int main(void) {
   for (int i=2000; i<5000; i++) {
     pi0 = mc_pi(i);
     if (!(fabs(pi0 - M_PI) < 0.4)) {
-      printf("Enter with even %d iterations is %f which is not accurate enough.\n",i,pi);
+      printf("Enter with even %d iterations is %f which is not accurate enough.\n",i,pi0);
       abort();
     }
   }
@@ -46,18 +46,13 @@ float mc_pi(int n)
   for(int i=1;i<=n;i++){
     x=frandom();
     y=frandom();
-    if(x*x + y*y <=1)
-    {circle++;}
+    if(x*x + y*y <=1){circle++;}
   }
   return 4*((float)circle/n);
 }
    
         
-      printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi0);
-      abort();
-    }
-  }
-}
+  
 
 
 
